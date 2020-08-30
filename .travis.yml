@@ -8,4 +8,4 @@ services:
 before_script: pip install docker-compose
 
 script:
-  - docker-compose run --rm cuenca_app sh -c "python test_n_queen.py"
+  - docker-compose run --rm cuenca_app sh -c "python test_n_queen.py && flake8 --ignore=E501"
