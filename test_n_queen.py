@@ -1,5 +1,5 @@
 import unittest
-from handler import ChessBoard, SolveNQueen
+from n_queen import ChessBoard, SolveNQueen
 
 
 class NQueenTestCase(unittest.TestCase):
