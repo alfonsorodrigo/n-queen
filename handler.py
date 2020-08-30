@@ -4,6 +4,13 @@ class ChessBoard(object):
         self.size = size
         self.board = [["" for x in range(self.size)] for x in range(self.size)]
 
+    def assign_queen(self, assign_row, assign_column):
+        for row in range(self.size):
+            for column in range(self.size):
+                if row == assign_row and column == assign_column:
+                    self.board[row][column] = "Q"
+        return self.board
+
     def is_safe(self, row, column):
 
         # check this row on left side
