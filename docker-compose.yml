@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  cuenca_app:
+    build:
+      context: .
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./cuenca_app:/cuenca_app
+    command: >
+      sh -c "python test_n_queen.py"
