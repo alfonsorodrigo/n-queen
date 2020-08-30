@@ -25,62 +25,62 @@ class NQueenTestCase(unittest.TestCase):
         self.assertNotEqual(self.eight_dimensional_board.display(), 0)
 
     def test_four_dimensional_is_not_safe_left_side(self):
-        board_assign_queen = self.four_dimensional_board.assign_queen(2, 2)
+        self.four_dimensional_board.assign_queen(2, 2)
         board_is_safe = self.four_dimensional_board.is_safe(2, 3)
         self.assertEqual(board_is_safe, False)
 
     def test_four_dimensional_is_not_safe_upper_diagonal_left_side(self):
-        board_assign_queen = self.four_dimensional_board.assign_queen(1, 1)
+        self.four_dimensional_board.assign_queen(1, 1)
         board_is_safe = self.four_dimensional_board.is_safe(3, 3)
         self.assertEqual(board_is_safe, False)
 
     def test_four_dimensional_is_not_safe_lower_diagonal_left_side(self):
-        board_assign_queen = self.four_dimensional_board.assign_queen(3, 0)
+        self.four_dimensional_board.assign_queen(3, 0)
         board_is_safe = self.four_dimensional_board.is_safe(0, 3)
         self.assertEqual(board_is_safe, False)
 
     def test_four_dimensional_is_safe_left_side(self):
-        board_assign_queen = self.four_dimensional_board.assign_queen(1, 2)
+        self.four_dimensional_board.assign_queen(1, 2)
         board_is_safe = self.four_dimensional_board.is_safe(1, 1)
         self.assertEqual(board_is_safe, True)
 
     def test_four_dimensional_is_safe_upper_diagonal_left_side(self):
-        board_assign_queen = self.four_dimensional_board.assign_queen(2, 2)
+        self.four_dimensional_board.assign_queen(2, 2)
         board_is_safe = self.four_dimensional_board.is_safe(1, 0)
         self.assertEqual(board_is_safe, True)
 
     def test_four_dimensional_is_safe_lower_diagonal_left_side(self):
-        board_assign_queen = self.four_dimensional_board.assign_queen(2, 0)
+        self.four_dimensional_board.assign_queen(2, 0)
         board_is_safe = self.four_dimensional_board.is_safe(0, 3)
         self.assertEqual(board_is_safe, True)
 
     def test_eight_dimensional_is_not_safe_left_side(self):
-        board_assign_queen = self.eight_dimensional_board.assign_queen(4, 5)
+        self.eight_dimensional_board.assign_queen(4, 5)
         board_is_safe = self.eight_dimensional_board.is_safe(4, 6)
         self.assertEqual(board_is_safe, False)
 
     def test_eight_dimensional_is_not_safe_upper_diagonal_left_side(self):
-        board_assign_queen = self.eight_dimensional_board.assign_queen(3, 2)
+        self.eight_dimensional_board.assign_queen(3, 2)
         board_is_safe = self.eight_dimensional_board.is_safe(4, 3)
         self.assertEqual(board_is_safe, False)
 
     def test_eight_dimensional_is_not_safe_lower_diagonal_left_side(self):
-        board_assign_queen = self.eight_dimensional_board.assign_queen(4, 2)
+        self.eight_dimensional_board.assign_queen(4, 2)
         board_is_safe = self.eight_dimensional_board.is_safe(3, 3)
         self.assertEqual(board_is_safe, False)
 
     def test_eight_dimensional_is_safe_left_side(self):
-        board_assign_queen = self.eight_dimensional_board.assign_queen(1, 2)
+        self.eight_dimensional_board.assign_queen(1, 2)
         board_is_safe = self.eight_dimensional_board.is_safe(1, 1)
         self.assertEqual(board_is_safe, True)
 
     def test_eight_dimensional_is_safe_upper_diagonal_left_side(self):
-        board_assign_queen = self.eight_dimensional_board.assign_queen(4, 4)
+        self.eight_dimensional_board.assign_queen(4, 4)
         board_is_safe = self.eight_dimensional_board.is_safe(5, 6)
         self.assertEqual(board_is_safe, True)
 
     def test_eight_dimensional_is_safe_lower_diagonal_left_side(self):
-        board_assign_queen = self.eight_dimensional_board.assign_queen(4, 4)
+        self.eight_dimensional_board.assign_queen(4, 4)
         board_is_safe = self.eight_dimensional_board.is_safe(3, 6)
         self.assertEqual(board_is_safe, True)
 
