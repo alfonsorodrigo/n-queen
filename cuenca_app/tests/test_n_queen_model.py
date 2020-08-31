@@ -1,4 +1,7 @@
+import sys
 import os
+
+sys.path.append(os.getcwd())
 import time
 import unittest
 from unittest import TestCase
@@ -28,8 +31,6 @@ class ORMCreateSchemaTestCase(TestCase):
                 time.sleep(1)
             else:
                 break
-        Session = sessionmaker(bind=self.engine)
-        self.session = Session()
 
     def test_create_schema(self):
         Base.metadata.create_all(self.engine)
@@ -57,13 +58,17 @@ class ORMCreateExampleDataTestCase(TestCase):
         n_queen = 4
         solution = SolveNQueen(n_queen).solve()
         n_queen_saved = NQueen(n_queen=n_queen, n_solution=solution)
-        self.assertEqual(n_queen_saved.n_solution, 2)
+        self.session.add(n_queen_saved)
+        self.session.commit()
+        self.assertEqual(n_queen_saved.n_solution, "2")
 
     def test_create_example_eight_queen(self):
         n_queen = 8
         solution = SolveNQueen(n_queen).solve()
         n_queen_saved = NQueen(n_queen=n_queen, n_solution=solution)
-        self.assertEqual(n_queen_saved.n_solution, 92)
+        self.session.add(n_queen_saved)
+        self.session.commit()
+        self.assertEqual(n_queen_saved.n_solution, "92")
 
 
 if __name__ == "__main__":

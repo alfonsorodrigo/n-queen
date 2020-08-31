@@ -1,3 +1,7 @@
+import sys
+import os
+
+sys.path.append(os.getcwd())
 import unittest
 from n_queen import ChessBoard, SolveNQueen
 

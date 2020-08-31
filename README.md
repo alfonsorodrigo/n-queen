@@ -25,11 +25,11 @@ docker-compose build
 To run the tests with the n queens algorithm, execute:
 
 ```sh
-docker-compose run cuenca_app sh -c "python ./test_n_queen.py"
+docker-compose run cuenca_app sh -c "python ./tests/test_n_queen.py"
 ```
 
 To run the tests saving data in postgresql, execute:
 
 ```sh
-docker-compose run cuenca_app sh -c "python ./test_n_queen_model.py"
+docker-compose run cuenca_app sh -c "python ./tests/test_n_queen_model.py"
 ```
