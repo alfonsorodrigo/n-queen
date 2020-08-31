@@ -9,4 +9,19 @@ services:
     volumes:
       - ./cuenca_app:/cuenca_app
     command: >
-      sh -c "python test_n_queen.py"
+      sh -c "python test_n_queen.py && python test_n_queen_model.py"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=cuenca_app
+      - DB_USER=postgres
+      - DB_PASS=supersecretpassword
+    depends_on:
+      - db
+  db:
+    image: postgres:10-alpine
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_DB=cuenca_app
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=supersecretpassword
